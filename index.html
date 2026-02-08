@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>วันครบรอบของเรา 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:"Kanit",sans-serif;
+    background:linear-gradient(#ffc1dc,#ff5fa2);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+    overflow:hidden;
+}
+
+/* เมาส์หัวใจ */
+body{
+    cursor: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'>\
+<text x='0' y='22' font-size='22'>❤️</text>\
+</svg>") 16 16, auto;
+}
+
+.page{
+    display:none;
+    width:100%;
+    position:relative;
+    z-index:2;
+}
+#page1{display:block;}
+
+input{
+    padding:14px;
+    font-size:20px;
+    width:220px;
+    border-radius:30px;
+    border:none;
+    text-align:center;
+}
+
+button{
+    border:none;
+    border-radius:40px;
+    padding:16px 36px;
+    font-size:24px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#loveBtn{
+    background:#ff2f92;
+    color:white;
+    box-shadow:0 0 20px #ff9acb;
+}
+#hateBtn{
+    background:#ffd1e8;
+    color:#ff2f92;
+    margin-left:15px;
+}
+
+#effectLayer{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+}
+
+.heart{
+    position:absolute;
+    font-size:26px;
+    animation:fall linear forwards;
+}
+
+.fall-img{
+    position:absolute;
+    width:120px;
+    border-radius:20px;
+    box-shadow:0 0 20px hotpink;
+    animation:imgFall linear forwards;
+}
+
+.fall-text{
+    position:absolute;
+    font-size:26px;
+    font-weight:bold;
+    text-shadow:0 0 15px hotpink;
+    animation:textFall linear forwards;
+}
+
+/* รูปบนหน้าที่ 2 */
+.question-img{
+    width:220px;
+    max-width:70%;
+    border-radius:25px;
+    box-shadow:0 0 25px #ff9acb;
+    margin-bottom:10px;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes fall{
+    from{transform:translateY(-120px);opacity:1;}
+    to{transform:translateY(110vh);opacity:0;}
+}
+@keyframes imgFall{
+    from{transform:translateY(-150px) rotate(0deg);opacity:1;}
+    to{transform:translateY(110vh) rotate(360deg);opacity:0;}
+}
+@keyframes textFall{
+    from{transform:translateY(-120px);opacity:1;}
+    to{transform:translateY(110vh);opacity:0;}
+}
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 เพลงพื้นหลัง (เล่นตั้งแต่หน้าแรก) -->
+<audio id="bgMusic" src="loveyou.mp3" autoplay loop muted></audio>
+
+<div id="effectLayer"></div>
+
+<!-- หน้า 1 -->
+<div id="page1" class="page">
+    <h1>💝 วันครบรอบของเรา 💝</h1>
+    <p>ใส่รหัสหัวใจ</p>
+    <input type="password" id="pass"><br><br>
+    <button onclick="checkPass()">เข้าสู่หัวใจ ❤️</button>
+</div>
+
+<!-- หน้า 2 (เพิ่มรูป ooo.png) -->
+<div id="page2" class="page">
+    <img src="ooo.png" class="question-img" alt="love"><br>
+    <h1>บี๋ๆ รักเค้าไหม 💕</h1><br>
+    <button id="loveBtn" onclick="goFinal()">รัก ❤️</button>
+    <button id="hateBtn" onclick="notLove()">ไม่รัก 💔</button>
+</div>
+
+<!-- หน้า 3 -->
+<div id="page3" class="page">
+    <h1>💖 สุขสันต์วันครบรอบ 3 ปี 8 เดือน 💖</h1>
+    <p>
+        เค้ารักบี๋ๆนะคะ รักมากๆเลยแหละ<br>
+        เค้าขอโทดนะคะที่ทำเรื่องไม่ดีไปเยอะเลย<br>
+        เค้าขอโทดจริงๆนะคะ แต่บี๋ๆก็ยังอยู่จนถึงตอนนี้<br><br>
+
+        บี๋ๆน่ารักที่สุดเลยอ่ะ รู้ป่ะ<br>
+        น่ารักมากกกกก 🥰<br><br>
+
+        เค้าขอโทดนะคะที่ทำให้บี๋ๆร้องไห้บ่อยมาก<br>
+        แต่เค้าจะค่อยๆโอ๋เองง อย่าดุเค้าเยอะได้ไหม<br>
+        เค้ากลัวนะ กลัวมากเลยแหละ 🥺<br><br>
+
+        ขอบคุณที่อยู่กับเค้าทุกคืนเลยนะคะ<br>
+        มีบี๋ๆนอนด้วยแล้ว เค้านอนหลับฝันดีตลอดเลยย 🌙<br><br>
+
+        บี๋ๆทำข้าวอร่อยมากเลย<br>
+        ทำให้เค้ากินอีกเยอะๆเลยนะ อิอิ 🍚💞<br><br>
+
+        เค้ารักบี๋ๆนะคะ รักที่สุดเลย ❤️<br>
+        อยู่ด้วยกันไปนานๆนะคะ
+    </p>
+</div>
+
+<script>
+const PASS="230665";
+let loveSize=24, hateSize=24, hateCount=0;
+
+const images=["love1.jpg","love2.jpg","love3.jpg","love4.jpg"];
+const texts=[
+    "รักนะคะ 💕","รักนะๆ 💖","รักมากๆๆ 😘","รักที่สุดเลยย 🥰","รักคนสวนะ ❤️"
+];
+
+let timer=null;
+const music=document.getElementById("bgMusic");
+music.volume=0.5;
+
+function checkPass(){
+    if(pass.value===PASS){
+        music.muted=false;
+        music.play();
+        showPage(2);
+        startHearts();
+    }else alert("รหัสไม่ถูกต้องนะ 😅");
+}
+
+function notLove(){
+    hateCount++; hateSize-=3; loveSize+=6;
+    loveBtn.style.fontSize=loveSize+"px";
+    hateBtn.style.fontSize=hateSize+"px";
+    if(hateCount>=5) hateBtn.style.display="none";
+}
+
+function goFinal(){
+    showPage(3);
+    startFinalEffect();
+}
+
+function showPage(n){
+    document.querySelectorAll(".page").forEach(p=>p.style.display="none");
+    document.getElementById("page"+n).style.display="block";
+    clearInterval(timer);
+    effectLayer.innerHTML="";
+}
+
+function startHearts(){
+    timer=setInterval(()=>{
+        const h=document.createElement("div");
+        h.className="heart";
+        h.innerText="❤️";
+        h.style.left=Math.random()*100+"vw";
+        h.style.fontSize=(20+Math.random()*30)+"px";
+        h.style.animationDuration=(4+Math.random()*3)+"s";
+        effectLayer.appendChild(h);
+        setTimeout(()=>h.remove(),7000);
+    },300);
+}
+
+function startFinalEffect(){
+    timer=setInterval(()=>{
+        const img=document.createElement("img");
+        img.src=images[Math.floor(Math.random()*images.length)];
+        img.className="fall-img";
+        img.style.left=Math.random()*90+"vw";
+        img.style.animationDuration=(5+Math.random()*4)+"s";
+        effectLayer.appendChild(img);
+        setTimeout(()=>img.remove(),9000);
+
+        const txt=document.createElement("div");
+        txt.className="fall-text";
+        txt.innerText=texts[Math.floor(Math.random()*texts.length)];
+        txt.style.left=Math.random()*90+"vw";
+        txt.style.animationDuration=(4+Math.random()*3)+"s";
+        effectLayer.appendChild(txt);
+        setTimeout(()=>txt.remove(),8000);
+    },450);
+}
+
+/* หัวใจตกตั้งแต่หน้าแรก */
+startHearts();
+</script>
+
+</body>
+</html>
